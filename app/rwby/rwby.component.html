@@ -1,0 +1,34 @@
+<div id='red'>
+  <h1>{{selectedr.name}}</h1>
+</div>
+<!--
+<div id='white'>
+  <h1>{{w.name}}</h1>
+</div>
+
+<div id='black'>
+  <h1>{{b.name}}</h1>
+</div>
+
+<div id='yellow'>
+  <h1>{{y.name}}</h1>
+</div>
+-->
+<div *ngIf = "selectedR">
+  <label>
+    Name:
+  </label>
+  <input [(ngModel)]="selectedR.name" placeholder="name">
+
+</div>
+<br>
+<br>
+<div id='lista'>
+  <h2>My Huntsmen:</h2>
+
+  <ul class="rwby">
+  <li *ngFor="let huntsman of rwby" (click)="onSelect(huntsman)">
+    <span class="badge">{{huntsman.id}}</span> {{huntsman.name}}
+  </li>
+  </ul>
+</div>
